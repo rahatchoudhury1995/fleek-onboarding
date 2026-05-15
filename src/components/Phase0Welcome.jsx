@@ -141,7 +141,7 @@ export default function Phase0Welcome({ appState, updateState, startFresh }) {
                 />
               </div>
 
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1" style={{ minWidth: 0 }}>
                 <label
                   className="font-semibold text-sm"
                   style={{ color: '#1D1A0E', fontFamily: '"DM Sans", sans-serif' }}
@@ -165,7 +165,7 @@ export default function Phase0Welcome({ appState, updateState, startFresh }) {
                     width: '100%',
                     maxWidth: '100%',
                     boxSizing: 'border-box',
-                    minWidth: 0,
+                    WebkitAppearance: 'none',
                   }}
                 />
               </div>
