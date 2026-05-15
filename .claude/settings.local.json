@@ -8,7 +8,9 @@
       "PowerShell(npm install *)",
       "PowerShell(npm run *)",
       "Bash(git *)",
-      "PowerShell(git add *)"
+      "PowerShell(git add *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git push *)"
     ]
   }
 }
