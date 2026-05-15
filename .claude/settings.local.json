@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Read(//mnt/c/Dev/**)",
+      "Bash(export VITE_ANTHROPIC_API_KEY=$\\(grep VITE_ANTHROPIC_API_KEY .env)",
+      "PowerShell(npm install *)",
+      "PowerShell(npm run *)",
+      "Bash(git *)",
+      "PowerShell(git add *)"
+    ]
+  }
+}
