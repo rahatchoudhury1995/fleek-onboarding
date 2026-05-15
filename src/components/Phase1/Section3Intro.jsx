@@ -131,6 +131,12 @@ export default function Section3Intro({ formData, updateFormData, onComplete }) 
           >
             Your ultimate thrift find — what is it and where did you get it?
           </p>
+          <p
+            className="text-xs mt-1.5"
+            style={{ color: 'rgba(51,51,51,0.5)', fontFamily: '"DM Sans", sans-serif' }}
+          >
+            Don't have one yet? Tell us about one you've got your eye on, or what you'd go hunting for. ✦
+          </p>
         </div>
         <textarea
           value={intro.thriftFind || ''}
