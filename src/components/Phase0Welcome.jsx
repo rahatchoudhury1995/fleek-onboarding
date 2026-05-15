@@ -162,6 +162,10 @@ export default function Phase0Welcome({ appState, updateState, startFresh }) {
                     color: '#1D1A0E',
                     fontFamily: '"DM Sans", sans-serif',
                     minHeight: '44px',
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    minWidth: 0,
                   }}
                 />
               </div>

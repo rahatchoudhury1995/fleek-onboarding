@@ -19,7 +19,7 @@ const ADDITIONAL_NEEDS_OPTIONS = [
   'Noise-cancelling headphones',
 ]
 
-function PillGroup({ label, options, selected, onSelect }) {
+function PillGroup({ label, options, selected, onSelect, multi = false }) {
   return (
     <div className="flex flex-col gap-3">
       <h3
@@ -30,11 +30,18 @@ function PillGroup({ label, options, selected, onSelect }) {
       </h3>
       <div className="flex flex-wrap gap-2">
         {options.map((option) => {
-          const isSelected = selected === option
+          const isSelected = multi ? Array.isArray(selected) && selected.includes(option) : selected === option
           return (
             <button
               key={option}
-              onClick={() => onSelect(isSelected ? '' : option)}
+              onClick={() => {
+                if (multi) {
+                  const arr = Array.isArray(selected) ? selected : []
+                  onSelect(isSelected ? arr.filter((s) => s !== option) : [...arr, option])
+                } else {
+                  onSelect(isSelected ? '' : option)
+                }
+              }}
               className="px-4 py-2.5 rounded-full text-sm font-medium border-2 transition-all duration-200 hover:border-gold"
               style={{
                 backgroundColor: isSelected ? '#FFD400' : 'white',
@@ -102,8 +109,9 @@ export default function Section4Equipment({ formData, updateFormData, onComplete
         <PillGroup
           label="Additional Needs"
           options={ADDITIONAL_NEEDS_OPTIONS}
-          selected={equipment.peripherals || ''}
+          selected={equipment.peripherals || []}
           onSelect={(v) => update('peripherals', v)}
+          multi
         />
 
         {/* Anything else — open text, optional */}
